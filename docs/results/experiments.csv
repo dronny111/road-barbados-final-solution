@@ -1,0 +1,40 @@
+area,experiment,measured_result,verdict
+backbone,Qwen2-VL-2B -> Qwen2.5-VL-3B (+ repetition ban),"fold-0 combined 0.1746 -> 0.1123 (backbone alone about -0.049, ban about -0.0135)",worked (3B later excluded: qwen-research licence)
+backbone,Qwen2.5-VL-7B NF4 vs 3B,"fold 0 0.1144 vs 0.1123 (worse), public LB +0.0031 better","worked on LB, not on fold 0"
+backbone,7B fp16 vs NF4,public LB +0.0008,small
+adaptation,LoRA on the vision MLP (fc1/fc2) for Qwen2-VL-2B,fold 0 0.1746 -> 0.1144 (-0.060); the default target list never touched the vision encoder,"worked, largest single fix"
+adaptation,Qwen3-VL-4B with frozen vision encoder -> vision-MLP scope,0.1675 -> 0.1244,worked
+adaptation,visual-attention LoRA,+0.0000539 combined,no-op
+pseudo-labels,test pseudo-labels in the 7B,"single model +0.0045, vote +0.0022",worked
+pseudo-labels,soft multi-candidate targets (soft-KD) vs hard pseudo2 labels,fold 0 0.10553 vs 0.10807,worked; best single models
+ensembling,plain vote of three fold models,public LB +0.0012,small
+ensembling,word-level (ROVER-style) vote,public LB +0.0040,worked
+ensembling,MBR vote on the leaderboard line cost,public LB +0.0017,worked
+ensembling,TrOCR multicentury as a fifth member (0.1508 alone),public LB +0.0056,"worked, most valuable member"
+ensembling,TrOCR candidate-likelihood rescore,"public LB +0.0011 (five members), +0.0021 (six)",worked despite a failed fold-0 gate
+ensembling,hill-climbing reranker over 7 members,public LB +0.0023 (about two thirds of the fold-0 prediction),worked
+ensembling,cleaned-image TrOCR as a 7th member,"fold 0 +0.0024, public LB +0.0026",worked; attribution to cleaning vs any extra member unresolved
+ensembling,hill-climbing reranker over 10 members,public LB +0.00225,worked (final)
+ensembling,plain MBR vote with the two recipe members (final4),public LB -0.0027 against the best,failed
+ensembling,character-LM rescore of the vote,"fold 0 +0.00088 (gate failed), public LB -0.00005",tie
+ensembling,stratum-weighted MBR,failed gates; placebo with permuted strata gained more than the real one (0.0022 vs 0.0016),failed
+ensembling,outlier-member rejection,fold 0 0.0900 vs 0.0886,failed
+ensembling,"TrOCR siblings trained without folds {0,1} and {0,2}",vote 0.0926 vs 0.0925; 75%-data siblings outvote the stronger model,failed
+ensembling,7B siblings grouped as one member,-0.0020,failed
+test-time,flatten / binary views of the crop,"vote 0.09337 vs 0.09248; TrOCR 0.1508 -> 0.1560 (flatten), 0.1981 (binary)",failed (models were trained on raw scans)
+test-time,"autocrop to the text band (fold 1, 200 rows)",0.2608 -> 0.3135,failed
+test-time,"beam search, 4 beams","+0.0037 at 3.2x cost, did not escape repetition loops",abandoned
+test-time,fill the pixel budget (target height 896),3B fold 0 0.1146 vs 0.1123; a loose-enriched sample had looked good,failed
+test-time,lexicon snapping on Qwen outputs,worse on all 3 folds,failed
+test-time,punctuation / case normaliser,edit table upper bound about 0.001; case and punctuation errors run both ways,not built
+training,drop loose crops from training (max source height 150),0.1929 vs 0.1746,failed
+training,CTC auxiliary head on TrOCR,"single model 0.1529 vs 0.1508, public LB 0.8484",failed
+training,CTC + reconstruction,0.1520 vs a 0.1509 gate,failed
+training,GRPO on the 3B (600 rows),0.1162 vs 0.1124,failed
+training,GRPO on the 2B with experts (200 rows),pre 0.11783 -> post 0.11578 on cleaned fold 0 (+0.00205),below the 0.003 line
+training,retrain on cleaned images (TrOCR),0.15324 vs 0.15076 raw,no gain
+training,recipe: curriculum + tight/loose experts + raw/cleaned mix + 213 confident pseudo-labels (2B),0.12036 vs a cleaned-image control of 0.11241,failed gate; not attributable to one component
+training,batch-8 vs batch-1 decoding of the same recipe,0.11783 vs 0.12036 across two runs,decode and run-to-run noise about 0.0025
+other,Kimi-VL fine-tune / 4-shot in-context,fine-tune stopped by the budget gate; 4-shot 0.303 vs 0.305 zero-shot (200 rows),dropped
+other,MMDetection word localisation,"oracle gain 0.0001, both gates failed",dropped
+other,Kraken fine-tune alone,0.4085 vs 0.4068 zero-shot,dropped

@@ -1,0 +1,16 @@
+{
+  "id": "<your-kaggle-user>/road-2b-vmlp-softkd-full",
+  "title": "road 2b vmlp softkd full",
+  "code_file": "kaggle_2b_vmlp_softkd_full.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "<your-kaggle-user>/road-babados",
+    "<your-kaggle-user>/road-softkd-full"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

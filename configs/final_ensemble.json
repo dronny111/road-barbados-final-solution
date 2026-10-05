@@ -1,0 +1,26 @@
+{
+  "name": "allvote10_hill",
+  "public_leaderboard": 0.923964093,
+  "submission_sha256": "236f551e2b41d637a7302be2c8e25fc6da8e08ef97812cc3c73818589178d726",
+  "reference": "predictions/fold0/validation_reference.csv",
+  "scorer_adapter": "adapters/trocr_multicentury_fold0",
+  "scorer_own_member": 4,
+  "members": [
+    {"name": "qwen25vl_7b_fp16_pseudo", "fold0": "predictions/fold0/qwen25vl_7b_fp16_pseudo.csv", "test": "predictions/test/qwen25vl_7b_fp16_full_pseudo.csv"},
+    {"name": "qwen2vl_2b_vmlp", "fold0": "predictions/fold0/qwen2vl_2b_vmlp.csv", "test": "predictions/test/qwen2vl_2b_vmlp.csv"},
+    {"name": "qwen3vl_4b_vmlp", "fold0": "predictions/fold0/qwen3vl_4b_vmlp.csv", "test": "predictions/test/qwen3vl_4b_vmlp.csv"},
+    {"name": "qwen25vl_7b_nf4", "fold0": "predictions/fold0/qwen25vl_7b_nf4.csv", "test": "predictions/test/qwen25vl_7b_nf4.csv"},
+    {"name": "trocr_multicentury", "fold0": "predictions/fold0/trocr_multicentury.csv", "test": "predictions/test/trocr_multicentury_full.csv"},
+    {"name": "ppocrv6_medium", "fold0": "predictions/fold0/ppocrv6_medium.csv", "test": "predictions/test/ppocrv6_medium.csv"},
+    {"name": "trocr_cleaned", "fold0": "predictions/fold0/trocr_cleaned.csv", "test": "predictions/test/trocr_cleaned.csv"},
+    {"name": "qwen2vl_2b_softkd", "fold0": "predictions/fold0/qwen2vl_2b_softkd.csv", "test": "predictions/test/qwen2vl_2b_softkd_full.csv"},
+    {"name": "qwen2vl_2b_recipe_sft", "fold0": "predictions/fold0/qwen2vl_2b_recipe_sft.csv", "test": "predictions/test/qwen2vl_2b_recipe_sft.csv"},
+    {"name": "qwen2vl_2b_recipe_grpo", "fold0": "predictions/fold0/qwen2vl_2b_recipe_grpo.csv", "test": "predictions/test/qwen2vl_2b_recipe_grpo.csv"}
+  ],
+  "fitted_weights": {
+    "members": [1, 1, 1, 1, 1, 3, 1, 1, 1, 1],
+    "trocr_likelihood_nll": 0.01,
+    "char_lm": 0.3
+  },
+  "notes": "Member order matters: member 0 is the pivot and ties go to the earliest member. The hill-climb weights are refitted from the fold-0 files by scripts/stack_hill_test.py; fitted_weights records what that fit produced for the submitted file."
+}

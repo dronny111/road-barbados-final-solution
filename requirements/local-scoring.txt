@@ -1,0 +1,14 @@
+# CPU scoring and stacking (scripts/trocr_score_candidates.py, scripts/stack_hill_test.py), tests, figures.
+# Versions are those the final submission was built with (Python 3.14.3, macOS arm64).
+numpy>=2.0
+pillow==12.3.0
+torch==2.11.0
+transformers==5.17.0
+peft==0.20.0
+huggingface-hub==1.31.0
+safetensors>=0.8.0
+# Only for scripts/stack_candidates.py (the cross-validated stacker comparison); the hill-climb needs numpy only.
+scikit-learn==1.8.0
+lightgbm==4.6.0
+# Only for scripts/make_figures.py.
+matplotlib>=3.10

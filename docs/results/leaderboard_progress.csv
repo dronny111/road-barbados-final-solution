@@ -1,0 +1,24 @@
+date,public_lb,change
+2026-09-11,0.62428,"Kraken zero-shot (Rev City model), aspect-routed to a one-epoch-adapted model below aspect ratio 20"
+2026-09-12,0.69033,Lexicon snapping to the nearest training word (later disproved on Qwen outputs)
+2026-09-13,0.83236,"Qwen2-VL-2B LoRA fine-tune (+0.142, the first large jump)"
+2026-09-17,0.83356,Vote of three fold models
+2026-09-19,0.88758,Qwen2.5-VL-3B plus a repetition ban (no-repeat n-gram 4); the 3B is qwen-research licensed and was later excluded from final members
+2026-09-20,0.89034,Vote of three 3B fold models
+2026-09-22,0.89343,Qwen2.5-VL-7B NF4 fold-0 adapter
+2026-09-26,0.89422,7B in fp16 (removing quantisation is worth under 0.001)
+2026-09-26,0.89824,Word-level (ROVER-style) vote of 7B fp16 + 7B NF4 + 2B
+2026-09-26,0.90088,Same vote with the full-data 7B as pivot
+2026-09-26,0.90109,Full-data 2B swapped in (a tie)
+2026-09-28,0.90160,Vote with the vision-MLP LoRA 2B
+2026-09-29,0.90763,"Qwen3-VL-4B vision-MLP LoRA, full-data pseudo-label 7B as pivot, vision-MLP 2B"
+2026-09-29,0.90930,Minimum-Bayes-risk (MBR) vote on the leaderboard line cost
+2026-09-29,0.91487,"TrOCR multicentury added as a fifth member (weak alone, most independent errors)"
+2026-09-30,0.91557,Full-data TrOCR swapped in
+2026-10-01,0.91666,TrOCR candidate-likelihood rescore of the vote (lambda 0.01)
+2026-10-01,0.91698,PP-OCRv6 medium fine-tune as a sixth member
+2026-10-02,0.91908,Likelihood rescore on the six-member pool
+2026-10-03,0.92138,Hill-climbing reranker over seven members
+2026-10-04,0.92160,Hill-climb with the full-data soft-KD 2B on the test side (uploaded before the 7-member MBR)
+2026-10-04,0.92171,"Cleaned-image TrOCR as a seventh member of the MBR vote (+0.0026 over the 6-member MBR vote, +0.0001 over the best score so far) plus rescore (lambda 0.003)"
+2026-10-04,0.92396,Hill-climbing reranker over ten members (final submission)

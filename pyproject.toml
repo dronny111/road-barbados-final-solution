@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "road-barbados-ocr"
+version = "1.0.0"
+description = "Final solution to the R.O.A.D. Barbados Historic Handwriting Challenge: ten recognizers and a hill-climbing reranker"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

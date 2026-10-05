@@ -1,0 +1,6 @@
+pool_or_method,fold0_combined_error
+best of 5 members,0.0700
+7 members,0.0623
+8 members,0.0615
+"current hill-climb (10 members, cross-validated)",0.0829
+"current best plain MBR vote (7 members, cross-fit)",0.0851

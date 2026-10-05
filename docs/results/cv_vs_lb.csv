@@ -1,0 +1,8 @@
+submission,fold0_cv_combined,public_lb,gap_1_minus_lb_minus_cv
+ctc_aux single model,0.1529,0.8484,-0.001
+ppocrv6 single model,0.1305,0.8703,-0.001
+7B NF4 single model,0.1144,0.8934,-0.008
+6-member vote + likelihood rescore,0.0867,0.9191,-0.006
+hill 7 members,0.0830,0.9214,-0.004
+7-member vote + cleaned TrOCR,0.0851,0.9217,-0.007
+hill 10 members (final),0.0829,0.9240,-0.007

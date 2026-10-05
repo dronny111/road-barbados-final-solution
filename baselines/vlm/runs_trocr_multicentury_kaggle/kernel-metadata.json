@@ -1,0 +1,15 @@
+{
+  "id": "<your-kaggle-user>/road-trocr-multicentury-fold0",
+  "title": "road trocr multicentury fold0",
+  "code_file": "kaggle_trocr_multicentury_fold0.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "<your-kaggle-user>/road-babados"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

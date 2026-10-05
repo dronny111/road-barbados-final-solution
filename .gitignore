@@ -1,0 +1,23 @@
+# Competition data is licensed for this challenge only. Never commit it.
+/Train.csv
+/Test.csv
+/SampleSubmission.csv
+/images
+/images_clean*
+*.zip
+/data/
+# Everything derived from it: member predictions, candidate scores, adapters, run outputs.
+/predictions/
+/adapters/
+/output/
+/experiments/
+*submission*.csv
+/submission/*.csv
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+__pycache__/
+.venv*/
+.env*
+.DS_Store

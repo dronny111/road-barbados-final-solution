@@ -1,0 +1,3 @@
+# PP-OCRv6 medium member (baselines/vlm/runs_ppocrv6). Run on Colab; local CPU is about 6 h per epoch.
+# Set TORCHDYNAMO_DISABLE=1 with this stack.
+kraken==7.1.1

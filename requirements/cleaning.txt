@@ -1,0 +1,4 @@
+# scripts/clean_images.py (illumination division, <=1 degree deskew, CLAHE on LAB L, light NLM denoise, unsharp).
+opencv-python-headless==4.13.*
+numpy>=2.0
+pillow==12.3.0

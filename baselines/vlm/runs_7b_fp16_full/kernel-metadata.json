@@ -1,0 +1,15 @@
+{
+  "id": "<your-kaggle-user-2>/road-7b-fp16-full",
+  "title": "road 7b fp16 full",
+  "code_file": "kaggle_7b_fp16_full.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "<your-kaggle-user-2>/road-babados"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

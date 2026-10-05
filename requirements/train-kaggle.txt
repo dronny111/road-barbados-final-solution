@@ -1,0 +1,6 @@
+# Kaggle T4 notebooks (baselines/vlm/*). The notebooks install baselines/vlm/requirements-kaggle.txt themselves;
+# this file points at it and adds TRL, which only the GRPO stage of member 9 needs (the builder installs it then).
+# torch/torchvision are deliberately unpinned: the notebook pins the runtime's own CUDA build as a pip constraint.
+# The members were trained on two Kaggle runtimes: torch 2.10.0+cu128 (members 0-4) and 2.11.0+cu128 (soft-KD, cleaned, recipe).
+-r ../baselines/vlm/requirements-kaggle.txt
+trl==1.13.0

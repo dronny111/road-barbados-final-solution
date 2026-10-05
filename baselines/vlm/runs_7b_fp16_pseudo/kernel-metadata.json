@@ -1,0 +1,16 @@
+{
+  "id": "<your-kaggle-user-2>/road-7b-fp16-pseudo-fold0",
+  "title": "road 7b fp16 pseudo fold0",
+  "code_file": "kaggle_7b_fp16_pseudo_fold0.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "<your-kaggle-user-2>/road-babados",
+    "<your-kaggle-user-2>/road-pseudo-labels"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
