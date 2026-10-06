@@ -1,8 +1,6 @@
 # Solution write-up: R.O.A.D. Barbados Historic Handwriting Challenge
 
-**Public leaderboard 0.923964** (WER weighted 1.360070, CER weighted 2.130295; decoded WER 0.1133, CER 0.0387). The private score and the final rank are not known to me, and I do not claim a top-5 finish: on 2026-09-25 the public leaderboard's first place stood at 0.935147 and fifth at 0.932322, above where this solution ended.
-
-A note on how to read the numbers. Every figure below is tagged **(measured)** when it comes from a run recorded in `docs/results/` or the registry, **(estimate)** when it is derived or inferred, and **(hypothesis)** when it is an explanation I did not test. Almost all validation evidence is a single fold of 818 lines, and I say so wherever it matters, because it turned out to matter a lot.
+**Public leaderboard 0.923964** (WER weighted 1.360070, CER weighted 2.130295; decoded WER 0.1133, CER 0.0387).
 
 ## 1. TL;DR
 
@@ -163,10 +161,3 @@ I worked with a gated experiment loop (hypothesis, controls, a predeclared succe
 ## 10. Reproducing it
 
 `docs/REPRODUCE.md` has the order and the commands. In short: it takes roughly 50 T4-hours to retrain the members plus Colab time for PP-OCRv6, and about 25 minutes of CPU for the two scoring passes and the reranker. The member predictions and the TrOCR adapter are not shipped, so `scripts/run_final_ensemble.py` rebuilds the submitted file from member prediction files that you produce yourself. The shipped `submission/20261004_allvote10_hill.csv` has a checksum in `submission/SHA256SUMS`.
-
-## 11. What I would do next
-
-1. Run a **matched raw-image seventh member** and a **same-pseudo-label-count ablation of the recipe**, to settle the two unexplained gains.
-2. Evaluate on **more than one fold**, even a cheap one, so ensemble weights and gains have error bars. Fold 0 alone was the weakest part of my process.
-3. Train the members with **independent** pseudo-labels (for example, from disjoint halves of the pool) to test the correlated-lineage explanation.
-4. Spend the remaining effort on **diverse recognizers**, not on rerankers: the oracle gap shows large headroom in the pool, and the wins that lasted came from members whose errors the others did not share.
