@@ -5,20 +5,11 @@ Decoded WER 0.1133, CER 0.0387.
 
 The submitted file is a **hill-climbing reranker over the transcriptions of ten recognizers**: seven Qwen vision-language models, two TrOCR-large models and a PP-OCRv6 recognizer. For each test line it picks one member's own reading, scored by a weighted sum of the leaderboard line cost against all members, a TrOCR likelihood and a character language model. Weights are fitted on 818 held-out training lines, never on test.
 
-![Public leaderboard over time](docs/figures/lb_progression.png)
+## Visual walkthrough
 
-<iframe
-  src="docs/demo.html"
-  title="R.O.A.D. Barbados solution walkthrough"
-  width="100%"
-  height="900"
-  loading="lazy"
-  style="border: 1px solid #c9c8c2; border-radius: 6px;"
->
-  <a href="https://github.com/dronny111/road-barbados-final-solution/blob/main/docs/demo.html">Open the interactive solution walkthrough.</a>
-</iframe>
+[![Open the interactive R.O.A.D. Barbados solution walkthrough](docs/figures/lb_progression.png)](https://dronny111.github.io/road-barbados-final-solution/demo.html)
 
-If the embed is unavailable in your Markdown renderer, open [the visual walkthrough](https://github.com/dronny111/road-barbados-final-solution/blob/main/docs/demo.html).
+[Open the interactive walkthrough](https://dronny111.github.io/road-barbados-final-solution/demo.html) for diagrams of the ten-recognizer pipeline, candidate reranker, validation results and leaderboard history. Rebuild it with `make demo`.
 
 ## What is in this repository
 
