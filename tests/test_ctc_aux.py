@@ -23,7 +23,7 @@ class CtcAuxTest(unittest.TestCase):
         head = CtcHead(8, 20)
         labels = torch.tensor([[0] + [5] * 10 + [2]])  # 10 targets > 6 frames
         loss = ctc_loss(head, torch.randn(1, 18, 8), labels, 3, 6, [0, 2])
-        self.assertEqual(float(loss), 0.0)
+        self.assertEqual(float(loss.detach()), 0.0)
 
     def test_infeasible_fraction(self):
         self.assertEqual(infeasible_fraction([3, 70, 64], 64), 1 / 3)

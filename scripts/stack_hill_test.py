@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Test-side hill-climbing vote: fit weights on all fold-0 OOF rows, rerank the test candidates.
 
-Members, candidate order and features match stack_candidates.py (7 members, pivot first, TrOCR-lik
+Members, candidate order and features match stack_candidates.py (pivot first, TrOCR-likelihood
 NLL from the fold-0 scorer, char LM on folds 1-4). Weights never see test labels. Writes the weights
 and a submission CSV; text is always one of the members' own readings.
 """
@@ -84,7 +84,7 @@ def main():
             'test_members': a.test_members, 'in_sample_combined_uniform': uni, 'in_sample_combined_fitted': fitted,
             'rows_changed_vs_uniform_vote': int((pick != uni_pick).sum())}
     json.dump(meta, open(out / 'weights.json', 'x'), indent=1)
-    print('rows changed vs uniform 7-member vote', meta['rows_changed_vs_uniform_vote'], 'of', len(tids))
+    print(f"rows changed vs uniform {nm}-member vote", meta['rows_changed_vs_uniform_vote'], 'of', len(tids))
 
 
 if __name__ == '__main__':

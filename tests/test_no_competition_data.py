@@ -1,4 +1,4 @@
-"""No competition ID or label line may appear in any tracked text file except the submitted CSV.
+"""No competition ID or label line may appear in repository source or documentation.
 
 Runs only when Train.csv / Test.csv are present locally (they are never shipped); a clone without
 the data skips it. Run it before every commit.

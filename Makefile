@@ -25,7 +25,7 @@ submission-check:
 	@test -n "$(FILE)" || (echo "FILE is required" && exit 2)
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/validate_submission.py "$(FILE)"
 
-# Needs Test.csv in the repository root.
+# Needs Test.csv and the rebuilt submission/20261004_allvote10_hill.csv.
 verify-submission:
 	cd submission && shasum -a 256 -c SHA256SUMS
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/validate_submission.py submission/20261004_allvote10_hill.csv

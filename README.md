@@ -11,6 +11,17 @@ The full story, with what worked, what failed and the numbers, is in **[docs/SOL
 
 Visual walkthrough with diagrams of the pipeline and the reranker: **[docs/demo.html](docs/demo.html)** (download or serve with GitHub Pages; rebuild with `make demo`).
 
+<iframe
+  src="docs/demo.html"
+  title="R.O.A.D. Barbados solution walkthrough"
+  width="100%"
+  height="900"
+  loading="lazy"
+  style="border: 1px solid #c9c8c2; border-radius: 6px;"
+>
+  <a href="docs/demo.html">Open the interactive solution walkthrough.</a>
+</iframe>
+
 ## What is in this repository
 
 ```
@@ -25,7 +36,7 @@ tests/                                   unit tests for the kept code
 requirements/                            one file per environment (Kaggle training, local scoring, cleaning, PP-OCRv6)
 ```
 
-Not shipped, by design: the competition data, labels and IDs, every prediction file other than the final one,
+Not shipped, by design: the competition data, labels and IDs, prediction files (including the submitted CSV),
 model adapters and candidate scores (they are derived from the competition data), and the experiment history.
 
 ## Quick start
@@ -35,8 +46,9 @@ pip install -r requirements/local-scoring.txt
 make test                                   # unit tests
 # put Train.csv, Test.csv, SampleSubmission.csv and images/ in the repository root, then:
 make preflight && make folds                # data audit; the fold manifest must match FOLD_SHA256
-make verify-submission                      # checksum and format of the shipped submission
 make final-ensemble DRY=1                   # the commands that rebuild it from the ten members' predictions
+# after rebuilding the members and final CSV:
+make verify-submission                      # checksum and format of the rebuilt submission
 ```
 
 Rebuilding the members takes about 50 T4-hours plus Colab time for PP-OCRv6; see `docs/REPRODUCE.md` for the

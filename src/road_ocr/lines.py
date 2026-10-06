@@ -165,7 +165,7 @@ def load_line_image(
             # rather than the hundred-odd that preserving aspect produces.
             from .buckets import pad_to_bucket
 
-            return pad_to_bucket(resized)
+            return pad_to_bucket(resized, patch=patch, max_pixels=max_pixels)
         return resized
 
 

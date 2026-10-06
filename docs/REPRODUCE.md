@@ -66,7 +66,7 @@ make final-ensemble           # 1) fold-0 candidate NLL  2) test candidate NLL  
 
 This runs `scripts/trocr_score_candidates.py` twice (about 10 and 15 minutes on a laptop CPU),
 then `scripts/stack_hill_test.py`, which fits the member, NLL and character-LM weights on the 818 fold-0
-lines and applies them to the test candidates. The shipped file used the weights
+lines and applies them to the test candidates. The submitted file used the weights
 `[1,1,1,1,1,3,1,1,1,1]`, NLL `0.01`, LM `0.3`. The script prints whether your file's sha256 equals the
 shipped one.
 
@@ -78,7 +78,7 @@ shipped one.
   TrOCR NLL scores across torch builds or machines.
 - **Checked on the machine that built the submission:** re-running the fold-0 scoring pass from this
   repository reproduced all 5,409 candidate NLLs bit for bit, and `make final-ensemble` from the saved
-  fold-0 and test scores reproduced the shipped file byte for byte (sha256 `236f551e...`). The test-side
+  fold-0 and test scores reproduced the submitted file byte for byte (sha256 `236f551e...`). The test-side
   scoring pass was not re-run; it uses the same code.
 - **Gaps:** the PP-OCRv6 Colab run has no recorded `run_config.json` or runtime; two Kaggle torch builds
   were used; the cleaned-image datasets were deleted after the competition and must be rebuilt; the scorer

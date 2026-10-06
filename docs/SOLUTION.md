@@ -162,7 +162,7 @@ I worked with a gated experiment loop (hypothesis, controls, a predeclared succe
 
 ## 10. Reproducing it
 
-`docs/REPRODUCE.md` has the order and the commands. In short: it takes roughly 50 T4-hours to retrain the members plus Colab time for PP-OCRv6, and about 25 minutes of CPU for the two scoring passes and the reranker. The member predictions and the TrOCR adapter are not shipped, so `scripts/run_final_ensemble.py` rebuilds the submitted file from member prediction files that you produce yourself. The shipped `submission/20261004_allvote10_hill.csv` has a checksum in `submission/SHA256SUMS`.
+`docs/REPRODUCE.md` has the order and the commands. In short: it takes roughly 50 T4-hours to retrain the members plus Colab time for PP-OCRv6, and about 25 minutes of CPU for the two scoring passes and the reranker. The member predictions and the TrOCR adapter are not shipped, so `scripts/run_final_ensemble.py` rebuilds the submitted file from member prediction files that you produce yourself. The submitted `submission/20261004_allvote10_hill.csv` is not shipped; its checksum is in `submission/SHA256SUMS`.
 
 ## 11. What I would do next
 
