@@ -15,10 +15,10 @@ The submitted file is a **hill-climbing reranker over the transcriptions of ten 
   loading="lazy"
   style="border: 1px solid #c9c8c2; border-radius: 6px;"
 >
-  <a href="docs/demo.html">Open the interactive solution walkthrough.</a>
+  <a href="https://github.com/dronny111/road-barbados-final-solution/blob/main/docs/demo.html">Open the interactive solution walkthrough.</a>
 </iframe>
 
-If the embed is unavailable in your Markdown renderer, open [the visual walkthrough](docs/demo.html).
+If the embed is unavailable in your Markdown renderer, open [the visual walkthrough](https://github.com/dronny111/road-barbados-final-solution/blob/main/docs/demo.html).
 
 ## What is in this repository
 
